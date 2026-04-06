@@ -7,7 +7,7 @@
 
    For an attacker, without TLS, they would be able to read every piece of data sent by the sensors. They would know exactly    what is happening in the monitored environment. By seeing the topic sensor/data, the attacker can learn the internal         logic of your IoT system, making it easier to plan a more targeted attack. Due to the fact that data is unencrypted, an attacker could not only read the data, but potentially inject fake data to trigger alerts or shut down systems without the broker or the Pi ever knowing the data was changed. With TLS, the attacker only sees that something is being sent to port 8883, but they have no way of knowing what the data is or how to manipulate it effectively.
 
-3. When require_certificate is set to true, the broker enforces Mutual TLS.This means the connection will fail immediately if
+3. When require_certificate is set to true, the broker enforces Mutual TLS. This means the connection will fail immediately if
    a client tries to connect without a valid certificate. The error received was Error: Protocol error. This error is
    mosquitto_sub saying the connection failed due to a TLS mismatch. The command did not provide any certificates. The VM has
    require_certificate true, it saw a connection attempt that didn't provide a client certificate and immediately cut the link.
